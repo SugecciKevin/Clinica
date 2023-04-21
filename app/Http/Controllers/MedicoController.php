@@ -20,7 +20,7 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Medicos.alta');
     }
 
     /**
