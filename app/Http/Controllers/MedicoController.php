@@ -12,7 +12,7 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        //
+        return view('Medicos.index');
     }
 
     /**
