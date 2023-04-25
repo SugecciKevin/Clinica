@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Medico;
 use Illuminate\Http\Request;
 
+
 class MedicoController extends Controller
 {
     /**
@@ -12,7 +13,8 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        return view('Medicos.index');
+        $medicos=medico::all();
+        return view('Medicos.index',["medicos"=>$medicos]);
     }
 
     /**
@@ -28,7 +30,15 @@ class MedicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nuevoMedico = new Medico();
+        $nuevoMedico->id_médico=$request->ID;
+        $nuevoMedico->nombre_médico=$request->Nombre;
+        $nuevoMedico->especialidad=$request->Especiealidad;
+        $nuevoMedico->información_contacto=$request->Contacto;
+        $nuevoMedico->disponibilidad=$request->Disponibilidad;
+
+        $nuevoMedico->Save();
+        return redirect('/Medicos');
     }
 
     /**

@@ -18,7 +18,7 @@
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand d-inline" href="">Clinica Medica Casidy Factor</a>
+            <a class="navbar-brand d-inline" href="">Hospital Universitario La Paz</a>
             </div>
             <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
@@ -101,10 +101,8 @@
     </main>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+
+<script src="{{ asset("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js") }}"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
 </script>
 </html>
