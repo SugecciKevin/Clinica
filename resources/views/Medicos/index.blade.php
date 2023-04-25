@@ -44,7 +44,7 @@
                     <!-- eliminar -->
                     <form action="">
                         @csrf
-                        @method('DELETE');
+                        @method('DELETE')
                         <input type="submit" class="btn btn-danger" value="borrar"
                         onClick="return confirm('¿Estas seguro?')">
                     </form>
