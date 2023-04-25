@@ -24,6 +24,6 @@
 </div>
 
 <div class="text-center">
-    <a class="btn btn-danger" href="{{url('/Medicos')}}" role="button">Cancelar</a>
+    <a class="btn btn-danger" href="{{url('/medicos')}}" role="button">Cancelar</a>
     <button type="submit" class="btn btn-primary">Guardar Medico</button>
 </div>

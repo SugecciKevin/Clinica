@@ -26,13 +26,13 @@
             </thead>
 
             <tbody>
+            @foreach ($medicos as $med)
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
+                    <td>{{$med->id_médico}}</td>
+                    <td>{{$med->nombre_médico}}</td>
+                    <td>{{$med->especialidad}}</td>
+                    <td>{{$med->información_contacto}}</td>
+                    <td>{{$med->disponibilidad}}</td>
                     <td>
                     <!-- modificar-->
                     <a href=""class="btn btn-warning" role="button"> editar </a>
@@ -51,6 +51,7 @@
                         {{-- {{asset ('/medicos/. $med->id')}} --}}
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
