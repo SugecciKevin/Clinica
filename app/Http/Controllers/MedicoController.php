@@ -38,7 +38,7 @@ class MedicoController extends Controller
         $nuevoMedico->disponibilidad=$request->Disponibilidad;
 
         $nuevoMedico->Save();
-        return redirect('/Medicos');
+        return redirect('/medicos');
     }
 
     /**

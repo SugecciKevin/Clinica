@@ -7,7 +7,7 @@
 </div>
 <div class="row justify-content-center my-5">
     <div class="col-lg-6">
-        <form class="mt-0" action="/alumnos" method="POST" enctype="multipart/form-data">
+        <form action={{asset("/medicos")}} method="POST">
             @csrf
             @include('Medicos.formulario')
         </form>
