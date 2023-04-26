@@ -12,16 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('administracion_medicamentos', function (Blueprint $table) {
-            $table->integer ("id_administración_medicamentos");
-            $table->integer("id_paciente");
-            $table->integer("id_medicamento");
+            $table->id ();
+            $table->unsignedBigInteger("id_paciente");
+            $table->unsignedBigInteger("id_medicamento");
             $table->String("dosis");
             $table->String("frecuencia_tratamiento");
             $table->String("duración_tratamiento");
 
-            $table->primary(['id_administración_medicamentos']);
-            $table->foreign("id_paciente")-> references ("id_paciente")-> on ("pacientes");
-            $table->foreign("id_medicamento")-> references ("id_medicamento")-> on ("medicamentos");
+            $table->foreign("id_paciente")-> references ("id")-> on ("pacientes");
+            $table->foreign("id_medicamento")-> references ("id")-> on ("medicamentos");
         });
     }
 

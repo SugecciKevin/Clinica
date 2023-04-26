@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('citas', function (Blueprint $table) {
-            $table->integer ("id_cita");
+            $table->id ();
             $table->date ("fecha_hora_cita");
-            $table->integer ("id_médico");
-            $table->integer ("id_paciente");
+            $table->unsignedBigInteger ("id_médico");
+            $table->unsignedBigInteger ("id_paciente");
 
-            $table->primary(['id_cita']);
-            $table->foreign("id_médico")->references("id_médico")-> on ("medicos");
-            $table->foreign("id_paciente")-> references("id_paciente")-> on ("pacientes");
+            $table->foreign("id_médico")->references("id")-> on ("medicos");
+            $table->foreign("id_paciente")-> references("id")-> on ("pacientes");
         });
     }
 
