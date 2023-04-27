@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id ();
             $table->date ("fecha_hora_cita");
-            $table->unsignedBigInteger ("id_médico");
-            $table->unsignedBigInteger ("id_paciente");
-
+            $table->unsignedBigInteger("id_médico");
+            $table->unsignedBigInteger("id_paciente");
             $table->foreign("id_médico")->references("id")-> on ("medicos");
             $table->foreign("id_paciente")-> references("id")-> on ("pacientes");
         });

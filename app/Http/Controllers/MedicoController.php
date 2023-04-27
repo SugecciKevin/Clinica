@@ -31,7 +31,6 @@ class MedicoController extends Controller
     public function store(Request $request)
     {
         $nuevoMedico = new Medico();
-        $nuevoMedico->id_médico=$request->ID;
         $nuevoMedico->nombre_médico=$request->Nombre;
         $nuevoMedico->especialidad=$request->Especiealidad;
         $nuevoMedico->información_contacto=$request->Contacto;
@@ -52,24 +51,33 @@ class MedicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Medico $medico)
+    public function edit(string $id)
     {
-        //
+        $EditarMed=Medico::findorfail($id);
+        return view('Medicos.actualizacion',['medicos' => $EditarMed]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Medico $medico)
+    public function update(Request $request, string $id)
     {
-        //
+        $nuevoMedico = Medico::findorfail($id);
+        $nuevoMedico->nombre_médico=$request->Nombre;
+        $nuevoMedico->especialidad=$request->Especiealidad;
+        $nuevoMedico->información_contacto=$request->Contacto;
+        $nuevoMedico->disponibilidad=$request->Disponibilidad;
+
+        $nuevoMedico->Save();
+        return redirect('/medicos');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Medico $medico)
+    public function destroy(string $id)
     {
-        //
+        Medico::destroy($id);
+        return redirect('/medicos');
     }
 }

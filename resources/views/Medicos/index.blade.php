@@ -28,27 +28,25 @@
             <tbody>
             @foreach ($medicos as $med)
                 <tr>
-                    <td>{{$med->id_médico}}</td>
+                    <td>{{$med->id}}</td>
                     <td>{{$med->nombre_médico}}</td>
                     <td>{{$med->especialidad}}</td>
                     <td>{{$med->información_contacto}}</td>
                     <td>{{$med->disponibilidad}}</td>
                     <td>
                     <!-- modificar-->
-                    <a href=""class="btn btn-warning" role="button"> editar </a>
-                    {{-- {{ asset('/medicos/'. $med->id. '/edit') }} --}}
+                    <a href= "{{ asset('/medicos/'.$med->id.'/edit') }}" class="btn btn-warning"> editar </a>
                     </a>
                     </td>
 
                     <td>
                     <!-- eliminar -->
-                    <form action="">
+                    <form action="{{asset ('/medicos/'.$med->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <input type="submit" class="btn btn-danger" value="borrar"
                         onClick="return confirm('¿Estas seguro?')">
                     </form>
-                        {{-- {{asset ('/medicos/. $med->id')}} --}}
                     </td>
                 </tr>
                 @endforeach
