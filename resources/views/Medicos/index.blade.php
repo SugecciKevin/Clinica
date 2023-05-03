@@ -7,7 +7,7 @@
         <br><br>
         <a href="{{ asset('/medicos/create') }}">
             <button class="btn btn-success" type="button">
-                agregar nuevo
+                agregar nuevo hola
             </button>
         </a>
         <br><br>
