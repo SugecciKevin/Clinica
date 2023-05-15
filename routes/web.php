@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\CitaController;
 
 Route::get('/', function () {
     return view('inicio');
@@ -10,4 +11,4 @@ Route::get('/', function () {
 
 Route::resource('/medicos', MedicoController::class);
 Route::resource('/paciente', PacienteController::class);
-
+Route::resource('/citas', CitaController::class);
