@@ -12,7 +12,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        //
+        $medicamentos=medicamento::all();
+        return view('Medicamentos.index',["medicamentos"=>$medicamentos]);
     }
 
     /**
@@ -20,7 +21,7 @@ class MedicamentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Medicamentos.alta');
     }
 
     /**
@@ -28,7 +29,13 @@ class MedicamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nuevoMedicamento = new Medicamento();
+        $nuevoMedicamento->nombre_medicamento=$request->Nombre;
+        $nuevoMedicamento->descripción=$request->Descripción;
+        $nuevoMedicamento->fabricante=$request->Fabricante;
+
+        $nuevoMedicamento->Save();
+        return redirect('/medicamentos');
     }
 
     /**
@@ -42,24 +49,32 @@ class MedicamentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Medicamento $medicamento)
+    public function edit(string $id)
     {
-        //
+        $EditarMed=Medicamento::findorfail($id);
+        return view('Medicamentos.actualizacion',['medicamentos' => $EditarMed]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Medicamento $medicamento)
+    public function update(Request $request, string $id)
     {
-        //
+        $nuevoMedicamento = Medicamento::findorfail($id);
+        $nuevoMedicamento->nombre_medicamento=$request->Nombre;
+        $nuevoMedicamento->descripción=$request->Descripción;
+        $nuevoMedicamento->fabricante=$request->Fabricante;
+
+        $nuevoMedicamento->Save();
+        return redirect('/medicamentos');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Medicamento $medicamento)
+    public function destroy(string $id)
     {
-        //
+        Medicamento::destroy($id);
+        return redirect('/medicamentos');
     }
 }

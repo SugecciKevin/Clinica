@@ -58,6 +58,14 @@
                         <br>
                         <li class="nav-item">
                             <span>
+                                <i class="fi fi-rr-user-md"></i>
+                                <a class="nav-link active d-inline" aria-current="page"
+                                    href="{{asset('/medicamentos')}}">Medicamentos</a>
+                            </span>
+                        </li>
+                        <br>
+                        <li class="nav-item">
+                            <span>
                                 <i class="fi fi-rr-document"></i>
                                 <a class="nav-link active d-inline" aria-current="page"
                                     href="{{asset('/carreras')}}">Recetas</a>
