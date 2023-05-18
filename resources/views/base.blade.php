@@ -9,6 +9,10 @@
 
     <link href="{{asset("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css")}}" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
 </head>
 <header>
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -40,14 +44,30 @@
                             </span>
                         </li>
                         <br>
-                        <li class="nav-item">
-                            <span>
-                                <i class="fi fi-rr-user"></i>
-                                <a class="nav-link active d-inline" aria-current="page"
-                                    href="{{asset('/alumnos')}}">Pacientes</a>
-                            </span>
-                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Pacientes
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <span>
+                                        <i class="fi fi-rr-user"></i>
+                                        <a class="nav-link active d-inline" aria-current="page"
+                                            href="{{asset('/pacienteee')}}">Pacientes</a>
+                                    </span>
+                                </li>
+                                <li class="nav-item">
+                                    <span>
+                                        <i class="fi fi-rr-user"></i>
+                                        <a class="nav-link active d-inline" aria-current="page"
+                                            href="{{asset('/Hpaciente')}}">Historial del paciente</a>
+                                    </span>
+                                </li>
+                            </ul>
+                         </li>
                         <br>
+
+
                         <li class="nav-item">
                             <span>
                                 <i class="fi fi-rr-user-md"></i>
@@ -93,7 +113,7 @@
         </div>
     </nav>
 </header>
-<body>
+<body style="font-family: Arial, Helvetica, sans-serif">
     <main>
         <div style="margin: 5%" class="container">
             @yield('contenido')
@@ -105,4 +125,7 @@
 <script src="{{ asset("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js") }}"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 </html>

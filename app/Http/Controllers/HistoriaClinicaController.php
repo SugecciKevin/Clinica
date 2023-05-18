@@ -4,16 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Historia_clinica;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class HistoriaClinicaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(request $request)
     {
         //
+        $texto = trim($request->get('texto'));//con trim borramos los espacios en blanco
+
+
+        $HistoriaClin = DB::table('historia_clinicas')
+            ->where('id_paciente','=', $texto)
+            ->get();
+
+        return view('HistoriaClinica.index', compact('HistoriaClin') );
     }
+
 
     /**
      * Show the form for creating a new resource.
