@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id ();
             $table->unsignedBigInteger ("id_paciente");
             $table->String ("análisis_sangre_orina_radiografías");
+            $table->String ("Descripcion");
 
             $table->foreign ("id_paciente")-> references ("id")-> on ("pacientes");
         });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Resultados_laboratorio;
 use Illuminate\Http\Request;
+use App\Models\Paciente;
 
 class ResultadosLaboratorioController extends Controller
 {
@@ -13,6 +14,8 @@ class ResultadosLaboratorioController extends Controller
     public function index()
     {
         //
+        $resultadoslab=Resultados_laboratorio::all();
+        return view('Resultados.index',["resultadoslab"=>$resultadoslab]);
     }
 
     /**
@@ -20,7 +23,11 @@ class ResultadosLaboratorioController extends Controller
      */
     public function create()
     {
-        //
+        $pacientesDisponibles = Paciente::all();
+        return view('Resultados.alta',[
+            'pacientesDisponibles' =>  $pacientesDisponibles,
+        ]);
+        
     }
 
     /**
@@ -28,13 +35,19 @@ class ResultadosLaboratorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nuevoResultado = new Resultados_laboratorio();
+        $nuevoResultado->id_paciente=$request->id_paciente;
+        $nuevoResultado->análisis_sangre_orina_radiografías=$request->analisis;
+        $nuevoResultado->Descripcion=$request->Descripcion;
+        
+        $nuevoResultado->Save();
+        return redirect('/resLab');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Resultados_laboratorio $resultados_laboratorio)
+    public function show(Resultados_laboratorio $resLab)
     {
         //
     }
@@ -42,24 +55,32 @@ class ResultadosLaboratorioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Resultados_laboratorio $resultados_laboratorio)
+    public function edit(string $id)
     {
-        //
+        $EditarRes=Resultados_laboratorio::findorfail($id);
+        return view('Resultados.actualizacion',['resultadoslab' => $EditarRes]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Resultados_laboratorio $resultados_laboratorio)
+    public function update(Request $request, string $id)
     {
-        //
+        $nuevoResultado = Resultados_laboratorio::findorfail($id);
+        $nuevoResultado->id_paciente=$request->id_paciente;
+        $nuevoResultado->análisis_sangre_orina_radiografías=$request->análisis_sangre_orina_radiografías;
+        $nuevoResultado->Descripcion=$request->Descripcion;
+        
+        $nuevoResultado->Save();
+        return redirect('/resLab');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Resultados_laboratorio $resultados_laboratorio)
+    public function destroy(string $id)
     {
-        //
+        Resultados_laboratorio::destroy($id);
+        return redirect('/resLab');
     }
 }
