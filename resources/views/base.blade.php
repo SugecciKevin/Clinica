@@ -60,7 +60,7 @@
                             <span>
                                 <i class="fi fi-rr-document"></i>
                                 <a class="nav-link active d-inline" aria-current="page"
-                                    href="{{asset('/carreras')}}">Recetas</a>
+                                    href="{{asset('/receta')}}">Recetas</a>
                             </span>
                         </li>
                         <br>
