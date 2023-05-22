@@ -24,11 +24,10 @@
 
                                 <p class="card-text">
 
-                                    <a href="{{ asset('/citas/' . $cita->id) }}">Cita: {{ $cita->id_cita }}<br></a>
-
+                                    Cita {{ $cita->id }}<br>
                                     Fecha de la Cita: {{ $cita->fecha_hora_cita }}<br>
-                                    Medico: {{ $cita->id_médico }}<br>
-                                    Paciente: {{ $cita->id_paciente }}
+                                    Medico: {{ $cita->Medico->nombre_médico}}<br>
+                                    Paciente: {{ $cita->Paciente->nombre_paciente }}
 
                                 </p>
 
