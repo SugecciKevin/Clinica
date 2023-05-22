@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cita;
 use Illuminate\Http\Request;
+use App\Models\Medico;
+use App\Models\Paciente;
 
 class CitaController extends Controller
 {
@@ -12,8 +14,8 @@ class CitaController extends Controller
      */
     public function index()
     {
-        $citas=cita::all();
-        return view('Citas.index',["citas"=>$citas]);
+        $citas = cita::all();
+        return view('Citas.index', ["citas" => $citas]);
     }
 
     /**
@@ -21,7 +23,13 @@ class CitaController extends Controller
      */
     public function create()
     {
-        return view ('Citas.alta');
+        $medicosDisponibles = Medico::all();
+        $pacientesDisponibles = Paciente::all();
+
+        return view('Citas.alta', [
+            'medicosDisponibles' => $medicosDisponibles,
+            'pacientesDisponibles' => $pacientesDisponibles,
+        ]);
     }
 
     /**
@@ -30,11 +38,11 @@ class CitaController extends Controller
     public function store(Request $request)
     {
         $nuevaCita = new Cita();
-        $nuevaCita->fecha_hora_cita=$request->Fecha;
-        $nuevaCita->id_médico=$request->Médico;
-        $nuevaCita->id_paciente=$request->Paciente;
-        
-        $nuevaCita->Save();
+        $nuevaCita->fecha_hora_cita = $request->fecha_hora_cita;
+        $nuevaCita->id_médico = $request->id_medico;
+        $nuevaCita->id_paciente = $request->id_paciente;
+
+        $nuevaCita->save();
         return redirect('/citas');
     }
 
@@ -51,8 +59,8 @@ class CitaController extends Controller
      */
     public function edit(string $id)
     {
-        $EditarCita=Cita::findorfail($id);
-        return view('Citas.actualizacion',['citas' => $EditarCita]);
+        $EditarCita = Cita::findorfail($id);
+        return view('Citas.actualizacion', ['citas' => $EditarCita]);
     }
 
     /**
@@ -60,11 +68,11 @@ class CitaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $nuevaCita = new Cita();
-        $nuevaCita->fecha_hora_cita=$request->Fecha;
-        $nuevaCita->id_médico=$request->Médico;
-        $nuevaCita->id_paciente=$request->Paciente;
-        
+        $nuevaCita = Cita::findorfail($id);
+        $nuevaCita->fecha_hora_cita = $request->Fecha;
+        $nuevaCita->id_médico = $request->Médico;
+        $nuevaCita->id_paciente = $request->Paciente;
+
         $nuevaCita->Save();
         return redirect('/citas');
     }
