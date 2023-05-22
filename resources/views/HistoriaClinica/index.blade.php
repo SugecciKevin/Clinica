@@ -3,6 +3,12 @@
 
 @section('contenido')
 
+<div class="row">
+    <a href="{{asset('/Hpaciente/create')}}">
+    <button class="btn btn-primary">Agregar</button>
+    </a>
+</div>
+<div>
 
     <div style="text-align: center" class="container">
         <h1>Historial de paciente </h1>
@@ -47,6 +53,21 @@
                     <td>{{$hisc->tratamientos}}</td>
                     <td>{{$hisc->medicamentos_recetados}}</td>
                     <td>{{$hisc->resultados_pruebas}}</td>
+                    <td>
+                        <!-- modificar-->
+                        <a href= "{{ asset('/Hpaciente/'.$hisc->id.'/edit') }}" class="btn btn-warning"> editar </a>
+                       </a>
+                       </td>
+
+                       <td>
+                       <!-- eliminar -->
+                       <form action="{{asset ('/Hpaciente/'.$hisc->id)}}" method="POST">
+                           @csrf
+                           @method('DELETE')
+                           <input type="submit" class="btn btn-danger" value="borrar"
+                           onClick="return confirm('¿Estas seguro?')">
+                       </form>
+                       </td>
 
                 </tr>
 
