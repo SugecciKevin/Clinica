@@ -66,6 +66,14 @@
                         <br>
                         <li class="nav-item">
                             <span>
+                                <i class="fi fi-rr-document"></i>
+                                <a class="nav-link active d-inline" aria-current="page"
+                                    href="{{asset('/citas')}}">Citas</a>
+                            </span>
+                        </li>
+                        <br>
+                        <li class="nav-item">
+                            <span>
                                 <i class="fi fi-rr-list-check"></i>
                                 <a class="nav-link active d-inline" aria-current="page" href="{{asset('/')}}" >Resultados Clinicos</a>
                             </span>
