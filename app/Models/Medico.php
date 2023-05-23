@@ -9,4 +9,9 @@ class Medico extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    
+    public function citas()
+{
+    return $this->hasMany('App\Models\Cita', 'id_médico');
+}
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\HistoriaClinicaController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\AdministracionMedicamentosController;
+use App\Http\Controllers\CitaController;
 
 Route::get('/', function () {
     return view('inicio');
@@ -17,4 +18,4 @@ Route::resource('/receta', AdministracionMedicamentosController::class);
 Route::resource('/medicamentos', MedicamentoController::class);
 Route::resource('/pacienteee', PacienteController::class);
 Route::resource('/Hpaciente', HistoriaClinicaController::class);
-
+Route::resource('/citas', CitaController::class);
