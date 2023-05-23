@@ -37,11 +37,11 @@ class ResultadosLaboratorioController extends Controller
     {
         $nuevoResultado = new Resultados_laboratorio();
         $id_paciente = explode('-', $request->id_paciente);
-        $id_pac = $id_paciente[1];
-        $nombre_pac = $id_pac[0];
+        $id_pac = $id_paciente[0];
+        $nombre_pac = $id_paciente[1];
 
         $nuevoResultado->id_paciente=$id_pac;
-        $nuevoResultado->Nombre_paciente = $nombre_pac;
+        $nuevoResultado->Nombre_paciente= $nombre_pac;
         $nuevoResultado->análisis_sangre_orina_radiografías=$request->analisis;
         $nuevoResultado->Descripcion=$request->Descripcion;
 

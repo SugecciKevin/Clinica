@@ -4,7 +4,7 @@
             <option value="{{ $resLab->id_paciente }}" selected>{{ $resLab->id_paciente }}</option>
         @endif
         @foreach ($pacientesDisponibles as $paciente)
-            <option value="{{$paciente->nombre}}-{{$paciente->id}}">{{ $paciente->nombre}}</option>
+        <option value="{{$paciente->id}}-{{$paciente->nombre}}">{{ $paciente->nombre}}</option>
         @endforeach
     </select>
     <label for="id_paciente" class="form-label fuente">Paciente:</label>
