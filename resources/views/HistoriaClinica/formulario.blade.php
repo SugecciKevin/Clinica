@@ -1,14 +1,15 @@
 
 
 
-<div class="form-floating mb-3">
-    <input type="text" id="idpaciente" name="idpaciente" class="form-control" placeholder=""
-    @if (isset($HistoriaClin))
-        value={{$HistoriaClin->id_paciente}}
-    @endif
-    required />
-    <label for="idpaciente" class="form-label fuente">Id del paciente</label>
+<div class="mb-3">
+    <select class="form-select" aria-label="pacientes" id="selPac" name="selPac" required>
+        <option selected>Paciente</option>
+        @foreach ($Paciente as $pa)
+            <option value="{{ $pa->id }}-{{ $pa->nombre }}">{{$pa->nombre}}</option>
+        @endforeach
+    </select>
 </div>
+
 
 <div class="form-floating mb-3">
     <input type="Diagnosticos" id="Diagnosticos" name="Diagnosticos" class="form-control" placeholder=""

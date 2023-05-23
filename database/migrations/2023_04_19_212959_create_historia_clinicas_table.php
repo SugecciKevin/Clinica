@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('historia_clinicas', function (Blueprint $table) {
             $table->id ();
             $table->unsignedBigInteger ("id_paciente");
+            $table->String("nombre_paciente"); #nombre paciente
             $table->String("diagnósticos");
             $table->String("tratamientos");
             $table->String("medicamentos_recetados");

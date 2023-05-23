@@ -1,11 +1,4 @@
-<div class="form-floating mb-3">
-    <input type="number" id="id" name="id" class="form-control" placeholder=""
-    @if (isset($pacienteee))
-        value={{$paciente->id}}
-    @endif
-    required />
-    <label for="id" class="form-label fuente">id del paciente </label>
-</div>
+
 
 <div class="form-floating mb-3">
     <input type="text" id="nombre" name="nombre" class="form-control" placeholder=""

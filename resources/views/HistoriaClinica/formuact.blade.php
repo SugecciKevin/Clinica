@@ -2,13 +2,23 @@
 
 
 <div class="form-floating mb-3">
-    <input type="text" id="idpaciente" name="idpaciente" class="form-control" readonly value="{{$HistoriaCLin->id_paciente}}"
+    <input type="text" id="idpaciente" name="idpaciente" class="form-control" readonly value="{{$HistoriaClin->id_paciente}}"
     @if (isset($HistoriaClin))
         value={{$HistoriaClin->id_paciente}}
     @endif
     required />
     <label for="idpaciente" class="form-label fuente">Id del paciente</label>
 </div>
+<div class="form-floating mb-3">
+    <input type="text" id="nombre" name="nombre" class="form-control" readonly value="{{$HistoriaClin->nombre_paciente}}"
+    @if (isset($HistoriaClin))
+        value={{$HistoriaClin->nombre_paciente}}
+    @endif
+    required />
+    <label for="idpaciente" class="form-label fuente">Nombre</label>
+</div>
+
+
 
 <div class="form-floating mb-3">
     <input type="Diagnosticos" id="Diagnosticos" name="Diagnosticos" class="form-control" placeholder=""

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Historia_clinica;
+use App\Models\Paciente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,11 +19,13 @@ class HistoriaClinicaController extends Controller
         $texto = trim($request->get('texto'));//con trim borramos los espacios en blanco
 
 
+
         $HistoriaClin = DB::table('historia_clinicas')
             ->where('id_paciente','=', $texto)
             ->get();
 
-        return view('HistoriaClinica.index', compact('HistoriaClin') );
+
+        return view('HistoriaClinica.index', ["HistoriaClin"=>$HistoriaClin  ]);
     }
 
 
@@ -31,7 +34,8 @@ class HistoriaClinicaController extends Controller
      */
     public function create()
     {
-        return view('HistoriaClinica.alta');
+        $Paciente = Paciente::All();
+        return view('HistoriaClinica.alta',["Paciente"=>$Paciente]);
     }
 
     /**
@@ -40,7 +44,12 @@ class HistoriaClinicaController extends Controller
     public function store(Request $request)
     {
         $nuevoHistorialCliente = new Historia_clinica();
-        $nuevoHistorialCliente->id_paciente=$request->idpaciente;
+        $selPac = explode('-', $request->selPac);
+        $nuevoHistorialCliente->id_paciente= $selPac[0]; #llave foranea
+        $nuevoHistorialCliente->nombre_paciente= $selPac[1];
+
+
+
         $nuevoHistorialCliente->diagnósticos=$request->Diagnosticos;
         $nuevoHistorialCliente->tratamientos=$request->tratamientos;
         $nuevoHistorialCliente->medicamentos_recetados=$request->medicamentos_recetados;
@@ -63,8 +72,8 @@ class HistoriaClinicaController extends Controller
      */
     public function edit(String $id)
     {
-        $HistoriaCLin=Historia_clinica::findorfail($id);
-        return view('HistoriaClinica.actualizar',['HistoriaCLin' => $HistoriaCLin]);
+        $HistoriaClin=Historia_clinica::findorfail($id);
+        return view('HistoriaClinica.actualizar',['HistoriaClin' => $HistoriaClin]);
     }
 
     /**
@@ -74,6 +83,7 @@ class HistoriaClinicaController extends Controller
     {
         $nuevoHistorialCliente = Historia_clinica::findorfail($id);
         $nuevoHistorialCliente->id_paciente=$request->idpaciente;
+        $nuevoHistorialCliente->nombre_paciente=$request->nombre;
         $nuevoHistorialCliente->diagnósticos=$request->Diagnosticos;
         $nuevoHistorialCliente->tratamientos=$request->tratamientos;
         $nuevoHistorialCliente->medicamentos_recetados=$request->medicamentos_recetados;

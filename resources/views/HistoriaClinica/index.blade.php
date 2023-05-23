@@ -37,7 +37,7 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>id_paciente</th>
+                    <th>nombre</th>
                     <th>diagnósticos</th>
                     <th>tratamientos</th>
                     <th>medicamentos_recetados</th>
@@ -48,7 +48,7 @@
                 @foreach ($HistoriaClin as $hisc )
                 <tr>
                     <td>{{$hisc->id}}</td>
-                    <td>{{$hisc->id_paciente}}</td>
+                    <td>{{$hisc->nombre_paciente}}</td>
                     <td>{{$hisc->diagnósticos}}</td>
                     <td>{{$hisc->tratamientos}}</td>
                     <td>{{$hisc->medicamentos_recetados}}</td>
