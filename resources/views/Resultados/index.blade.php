@@ -15,10 +15,13 @@
         <table id="resLab" class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>ID resultado</th>
                     <th>Paciente</th>
                     <th>Analisis</th>
                     <th>Descripcion</th>
+                    <th>
+
+                    </th>
 
                 </tr>
             </thead>
@@ -45,7 +48,8 @@
                         <input type="submit" class="btn btn-danger" value="borrar"
                         onClick="return confirm('¿Estas seguro?')">
                     </form>
-                    <td> <a href= "{{ asset('/resLab/'.$med->id.'/edit') }}" class="btn btn-warning"> editar </a></td>
+                    <td>
+                         <a href= "{{ asset('/resLab/'.$med->id.'/edit') }}" class="btn btn-warning"> editar </a></td>
                     </td>
 
                 </tr>

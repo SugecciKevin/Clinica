@@ -16,8 +16,6 @@
             <thead>
                 <tr>
                     <th>id receta</th>
-                    <th>id paciente</th>
-                    <th>id_medico</th>
                     <th>paciente</th>
                     <th>Medico</th>
                     <th>medicamentos</th>
@@ -32,8 +30,6 @@
             @foreach ($Administracion_medicamentos as $re)
             <tr>
                 <td>{{$re->id}}</td>
-                <td>{{$re->id_paciente}}</td>
-                <td>{{$re->id_medico}}</td>
                 <td>{{$re->nombre_paciente}}</td>
                 <td>{{$re->nombre_doctor}}</td>
                 <td>{{$re->medicamentos}}</td>

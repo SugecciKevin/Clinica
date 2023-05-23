@@ -99,14 +99,6 @@
                                     href="{{asset('/citas')}}">Citas</a>
                             </span>
                         </li>
-                        <br>
-                        <li class="nav-item">
-                            <span>
-                                <i class="fi fi-rr-list-check"></i>
-                                <a class="nav-link active d-inline" aria-current="page" href="{{asset('/')}}" >Resultados Clinicos</a>
-                            </span>
-                        </li>
-                        <br>
                         </li>
                         <br>
                         <li class="nav-item">
@@ -116,22 +108,6 @@
                             </span>
                         </li>
                         <br>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle d-inline" href="" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Otras opciones
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="#">Medicamentos</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
             </div>

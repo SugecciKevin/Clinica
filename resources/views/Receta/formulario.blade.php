@@ -1,5 +1,5 @@
 <div class="mb-3">
-    <select class="form-select" aria-label="pacientes" id="selPac" name="selPac">
+    <select class="form-select" aria-label="pacientes" id="selPac" name="selPac" required>
         <option selected>Paciente</option>
         @foreach ($Paciente as $pa)
             <option value="{{ $pa->id }}-{{ $pa->nombre }}">{{$pa->nombre}}</option>
@@ -8,7 +8,7 @@
 </div>
 
 <div class="mb-3">
-    <select class="form-select" aria-label="Carreras en la escuela" id="selMed" name="selMed">
+    <select class="form-select" aria-label="Carreras en la escuela" id="selMed" name="selMed" required>
         <option selected>Medico</option>
         @foreach ($Medico as $me)
         <option value="{{$me->id}}-{{ $me->nombre_médico}}">{{$me->nombre_médico}}</option>
@@ -49,7 +49,7 @@
 
 <div class="text-center">
     <a class="btn btn-danger" href="{{ url('/receta') }}" role="button">Cancelar</a>
-    <button type="submit" class="btn btn-primary" onClick="return confirm('¿Estas seguro?')">Guardar</button>
+    <button type="submit" class="btn btn-primary" onclick="return validarSel()">Guardar</button>
 </div>
 
 <script>
@@ -81,5 +81,21 @@ function pasar() {
 
     document.getElementById("selMedi").value = "Selecciona medicamento";
 }
+function validarSel() {
+    var miPac = document.getElementById("selPac");
+    var miMed = document.getElementById("selMed");
+    var medicamento = document.getElementById("medicamento");
+    var dosis = document.getElementById("dosis");
+    var frec = document.getElementById("frecuencia");
+
+
+    if (miPac.value === "Paciente" || miMed.value === "Medico" || medicamento.value.trim() === "" || dosis.value.trim() === "" || frec.value.trim() === "") {
+        alert("Rellena todos los campos solicitados");
+        return false;
+    } else {
+        return confirm("¿Estás seguro?");
+    }
+}
+
 
 </script>

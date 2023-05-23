@@ -8,7 +8,7 @@
 </div>
 
 <div class="form-floating mb-3">
-    <input type="Especiealidad" id="Especiealidad" name="Especiealidad" class="form-control" placeholder=""
+    <input type=text" id="Especiealidad" name="Especiealidad" class="form-control" placeholder=""
     @if (isset($medicos))
         value={{$medicos->especialidad}}
     @endif
@@ -17,7 +17,7 @@
 </div>
 
 <div class="form-floating mb-3">
-    <input type="text" id="Contacto" name="Contacto" class="form-control" placeholder=""
+    <input type="number" id="Contacto" name="Contacto" class="form-control" placeholder=""
     @if (isset($medicos))
         value={{$medicos->información_contacto}}
     @endif

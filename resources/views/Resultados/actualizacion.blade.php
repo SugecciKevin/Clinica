@@ -7,10 +7,10 @@
 </div>
 <div class="row justify-content-center my-5">
     <div class="col-lg-6">
-        <form action={{asset(/resLab/.$resLab->id)}} method="POST">
+        <form action={{asset('/resLab/'.$resultadoslab->id)}} method="POST">
             @csrf
             @method('PATCH')
-            @include('Resultados.formulario')
+            @include('Resultados.form')
         </form>
     </div>
 </div>

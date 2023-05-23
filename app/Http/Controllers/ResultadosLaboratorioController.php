@@ -72,7 +72,7 @@ class ResultadosLaboratorioController extends Controller
     public function update(Request $request, string $id)
     {
         $nuevoResultado = Resultados_laboratorio::findorfail($id);
-        $nuevoResultado->id_paciente=$request->id_paciente;
+
         $nuevoResultado->análisis_sangre_orina_radiografías=$request->análisis_sangre_orina_radiografías;
         $nuevoResultado->Descripcion=$request->Descripcion;
 
