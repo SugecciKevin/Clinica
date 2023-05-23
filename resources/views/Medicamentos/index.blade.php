@@ -28,7 +28,7 @@
             @foreach ($medicamentos as $medm)
                 <tr>
                     <td>{{$medm->id}}</td>
-                    <td>{{$medm->nombre_médicamento}}</td>
+                    <td>{{$medm->nombre_medicamento}}</td>
                     <td>{{$medm->descripción}}</td>
                     <td>{{$medm->fabricante}}</td>
                     <td>
