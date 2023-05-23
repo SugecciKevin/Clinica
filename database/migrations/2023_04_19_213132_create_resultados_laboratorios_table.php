@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('resultados_laboratorios', function (Blueprint $table) {
             $table->id ();
             $table->unsignedBigInteger ("id_paciente");
+            $table->String("Nombre_paciente");
             $table->String ("análisis_sangre_orina_radiografías");
+            $table->String ("Descripcion");
 
             $table->foreign ("id_paciente")-> references ("id")-> on ("pacientes");
         });

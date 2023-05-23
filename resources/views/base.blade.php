@@ -107,6 +107,15 @@
                             </span>
                         </li>
                         <br>
+                        </li>
+                        <br>
+                        <li class="nav-item">
+                            <span>
+                                <i class="fi fi-rr-list-check"></i>
+                                <a class="nav-link active d-inline" aria-current="page" href="{{asset('/resLab')}}" >Resultados de Laboratorio</a>
+                            </span>
+                        </li>
+                        <br>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-inline" href="" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">

@@ -7,6 +7,7 @@ use App\Http\Controllers\HistoriaClinicaController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\AdministracionMedicamentosController;
 use App\Http\Controllers\CitaController;
+use App\Http\Controllers\ResultadosLaboratorioController;
 
 Route::get('/', function () {
     return view('inicio');
@@ -19,3 +20,5 @@ Route::resource('/medicamentos', MedicamentoController::class);
 Route::resource('/pacienteee', PacienteController::class);
 Route::resource('/Hpaciente', HistoriaClinicaController::class);
 Route::resource('/citas', CitaController::class);
+Route::resource('/resLab', ResultadosLaboratorioController::class);
+
