@@ -16,7 +16,7 @@ return new class extends Migration
             $table -> String ("nombre_médico");
             $table -> String ("especialidad");
             $table -> String ("información_contacto");
-            $table -> String ("disponibilidad");
+            $table -> String ("Area");
 
         });
     }

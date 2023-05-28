@@ -34,7 +34,7 @@ class MedicoController extends Controller
         $nuevoMedico->nombre_médico=$request->Nombre;
         $nuevoMedico->especialidad=$request->Especiealidad;
         $nuevoMedico->información_contacto=$request->Contacto;
-        $nuevoMedico->disponibilidad=$request->Disponibilidad;
+        $nuevoMedico->Area=$request->Disponibilidad;
 
         $nuevoMedico->Save();
         return redirect('/medicos');
@@ -66,7 +66,7 @@ class MedicoController extends Controller
         $nuevoMedico->nombre_médico=$request->Nombre;
         $nuevoMedico->especialidad=$request->Especiealidad;
         $nuevoMedico->información_contacto=$request->Contacto;
-        $nuevoMedico->disponibilidad=$request->Disponibilidad;
+        $nuevoMedico->Area=$request->Disponibilidad;
 
         $nuevoMedico->Save();
         return redirect('/medicos');

@@ -19,7 +19,7 @@
                     <th>Nombre</th>
                     <th>Especialidad</th>
                     <th>Contacto</th></th>
-                    <th>Disponibilidad</th>
+                    <th>Area</th>
                     <th>Modificar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -32,7 +32,7 @@
                     <td>{{$med->nombre_médico}}</td>
                     <td>{{$med->especialidad}}</td>
                     <td>{{$med->información_contacto}}</td>
-                    <td>{{$med->disponibilidad}}</td>
+                    <td>{{$med->Area}}</td>
                     <td>
                     <!-- modificar-->
                     <a href= "{{ asset('/medicos/'.$med->id.'/edit') }}" class="btn btn-warning"> editar </a>

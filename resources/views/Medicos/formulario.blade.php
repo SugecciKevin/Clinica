@@ -28,10 +28,10 @@
 <div class="form-floating mb-3">
     <input type="text" id="Disponibilidad" name="Disponibilidad" class="form-control" placeholder=""
     @if (isset($medicos))
-        value={{$medicos->disponibilidad}}
+        value={{$medicos->Area}}
     @endif
     required />
-    <label for="Disponibilidad" class="form-label fuente">Disponibilidad</label>
+    <label for="Disponibilidad" class="form-label fuente">Area</label>
 </div>
 
 <div class="text-center">

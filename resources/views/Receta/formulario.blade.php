@@ -32,18 +32,21 @@
 <div class="form-floating mb-3">
     <textarea name="medicamento" id="medicamento" cols="30" rows="10" class="form-control" required>
     </textarea>
+    <p id="contador"></p>
     <label for="Nombre" class="form-label fuente">Medicamentos</label>
 </div>
 
 <div class="form-floating mb-3">
     <textarea name="dosis" id="dosis" cols="30" rows="10" class="form-control" required>
     </textarea>
+    <p id="contador2"></p>
     <label for="Nombre" class="form-label fuente">dosis</label>
 </div>
 
 <div class="form-floating mb-3">
     <textarea name="frecuencia" id="frecuencia" cols="30" rows="10" class="form-control" required>
     </textarea>
+    <p id="contador3"></p>
     <label for="Nombre" class="form-label fuente">frecuencia</label>
 </div>
 
@@ -54,6 +57,10 @@
 
 <script>
 function pasar() {
+    var validar = document.getElementById("selMedi").value;
+    if(validar.trim()==="Selecciona medicamento"){
+        alert("selecciona uno de los medicamentos");
+    }else{
     var selectElement = document.getElementById("selMedi");
     var texto1 = selectElement.selectedOptions[0].textContent;
 
@@ -81,6 +88,7 @@ function pasar() {
 
     document.getElementById("selMedi").value = "Selecciona medicamento";
 }
+}
 function validarSel() {
     var miPac = document.getElementById("selPac");
     var miMed = document.getElementById("selMed");
@@ -96,6 +104,46 @@ function validarSel() {
         return confirm("¿Estás seguro?");
     }
 }
+
+const textArea = document.getElementById('medicamento');
+const contador = document.getElementById('contador');
+
+const textArea2 = document.getElementById("dosis");
+const contador2 = document.getElementById("contador2");
+
+const textArea3 = document.getElementById("frecuencia");
+const contador3 = document.getElementById("contador3");
+
+
+textArea.addEventListener('input', function() {
+  const caracteresRestantes = 250 - textArea.value.length;
+  contador.textContent = `Caracteres restantes: ${caracteresRestantes}`;
+
+  if (caracteresRestantes < 0) {
+    textArea.value = textArea.value.substring(0, 250);
+    contador.textContent = 'Límite de caracteres alcanzado';
+  }
+});
+
+textArea2.addEventListener('input', function() {
+  const caracteresRestantes = 250 - textArea2.value.length;
+  contador2.textContent = `Caracteres restantes: ${caracteresRestantes}`;
+
+  if (caracteresRestantes < 0) {
+    textArea2.value = textArea2.value.substring(0, 250);
+    contador2.textContent = 'Límite de caracteres alcanzado';
+  }
+});
+
+textArea3.addEventListener('input', function() {
+  const caracteresRestantes = 250 - textArea3.value.length;
+  contador3.textContent = `Caracteres restantes: ${caracteresRestantes}`;
+
+  if (caracteresRestantes < 0) {
+    textArea3.value = textArea3.value.substring(0, 250);
+    contador3.textContent = 'Límite de caracteres alcanzado';
+  }
+});
 
 
 </script>
