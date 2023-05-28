@@ -9,11 +9,10 @@
 
 <div class="form-floating mb-3">
     <select id="id_medico" name="id_medico" class="form-control" required>
-        @if (isset($cita))
-            <option value="{{ $cita->id_medico }}" selected>{{ $cita->id_medico }}</option>
-        @endif
-        @foreach ($medicosDisponibles as $medicos)
-            <option value="{{ $medicos->id }}">{{ $medicos->nombre_médico }}</option>
+        @foreach ($medicosDisponibles as $medico)
+            <option value="{{ $medico->id }}" @if (isset($cita) && $cita->medico->id === $medico->id) selected @endif>
+                {{ $medico->nombre_médico }}
+            </option>
         @endforeach
     </select>
     <label for="id_medico" class="form-label fuente">Médico:</label>
@@ -21,11 +20,10 @@
 
 <div class="form-floating mb-3">
     <select id="id_paciente" name="id_paciente" class="form-control" required>
-        @if (isset($cita))
-            <option value="{{ $cita->id_paciente }}" selected>{{ $cita->id_paciente }}</option>
-        @endif
         @foreach ($pacientesDisponibles as $paciente)
-            <option value="{{ $paciente->id }}">{{$paciente->nombre}}</option>
+            <option value="{{ $paciente->id }}" @if (isset($cita) && $cita->paciente->id === $paciente->id) selected @endif>
+                {{ $paciente->nombre }}
+            </option>
         @endforeach
     </select>
     <label for="id_paciente" class="form-label fuente">Paciente:</label>

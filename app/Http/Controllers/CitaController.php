@@ -59,12 +59,12 @@ class CitaController extends Controller
      */
     public function edit(string $id)
     {
-        $EditarCita = Cita::findorfail($id);
+        $cita = Cita::findOrFail($id);
         $medicosDisponibles = Medico::all();
         $pacientesDisponibles = Paciente::all();
-
+    
         return view('Citas.actualizacion', [
-            'citas' => $EditarCita,
+            'cita' => $cita,
             'medicosDisponibles' => $medicosDisponibles,
             'pacientesDisponibles' => $pacientesDisponibles,
         ]);

@@ -13,7 +13,7 @@
 
         <div class="col-lg-6">
 
-            <form action={{ asset('/citas/' . $citas->id) }} method="POST">
+            <form action={{ asset('/citas/' . $cita->id) }} method="POST">
 
                 @csrf
                 @method('PATCH')

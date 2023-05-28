@@ -27,7 +27,7 @@
                                     Cita {{ $cita->id }}<br>
                                     Fecha de la Cita: {{ $cita->fecha_hora_cita }}<br>
                                     Medico: {{ $cita->Medico->nombre_médico}}<br>
-                                    Paciente: {{ $cita->Paciente->nombre_paciente }}
+                                    Paciente: {{ $cita->Paciente->nombre}}
 
                                 </p>
 
