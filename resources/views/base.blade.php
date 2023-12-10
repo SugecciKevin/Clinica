@@ -22,7 +22,7 @@
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand d-inline" href="">Hospital Universitario La Paz</a>
+            <a class="navbar-brand d-inline" href="">Proyecto programacion Web Hospital Universitario La Paz</a>
             </div>
             <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
